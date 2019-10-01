@@ -11,12 +11,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
 
   # Process files as they are uploaded:
   process resize_to_fill: [800, 350]
-
-
-  end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
